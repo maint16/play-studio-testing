@@ -1,0 +1,34 @@
+{
+  "QuestConfiguration": {
+    "RateFromBet": 5,
+    "LevelBonusRate": 3,
+    "TotalPoint": 100,
+    "Milestones": [
+      {
+        "EarnedPoints": 10,
+        "ChipsAwarded": 1
+      },
+      {
+        "EarnedPoints": 15,
+        "ChipsAwarded": 2
+      },
+      {
+        "EarnedPoints": 30,
+        "ChipsAwarded": 5
+      },
+      {
+        "EarnedPoints": 50,
+        "ChipsAwarded": 7
+      },
+      {
+        "EarnedPoints": 80,
+        "ChipsAwarded": 9
+      },
+      {
+        "EarnedPoints": 100,
+        "ChipsAwarded": 50
+      }
+    ]
+  }
+
+}

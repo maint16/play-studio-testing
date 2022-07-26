@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "quest-api", "quest-api\quest-api.csproj", "{2ACCDD94-75D0-4157-B430-8857AE1F91EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quest-entity", "quest-entity\quest-entity.csproj", "{AAC6C2AB-3B98-4FEF-9CDE-98C1D2779973}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2ACCDD94-75D0-4157-B430-8857AE1F91EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ACCDD94-75D0-4157-B430-8857AE1F91EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ACCDD94-75D0-4157-B430-8857AE1F91EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ACCDD94-75D0-4157-B430-8857AE1F91EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC6C2AB-3B98-4FEF-9CDE-98C1D2779973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC6C2AB-3B98-4FEF-9CDE-98C1D2779973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC6C2AB-3B98-4FEF-9CDE-98C1D2779973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC6C2AB-3B98-4FEF-9CDE-98C1D2779973}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {667D2F66-B029-4361-B592-829E0AE5503D}
+	EndGlobalSection
+EndGlobal
