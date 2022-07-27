@@ -5,6 +5,10 @@
     "TotalPoint": 100,
     "Milestones": [
       {
+        "EarnedPoints": 0,
+        "ChipsAwarded": 0
+      },
+      {
         "EarnedPoints": 10,
         "ChipsAwarded": 1
       },

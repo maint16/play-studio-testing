@@ -32,14 +32,11 @@ namespace quest_api.Services
                 throw new Exception("The earned points exceeded the total points.");
                         
             progressResult.TotalQuestPercentCompleted = (int)Math.Round((decimal)(totalEarnedPoints * 100 / _questConfiguration.TotalPoint), MidpointRounding.AwayFromZero);
-            var newMilestone = _questConfiguration.Milestones.Where(c => c.EarnedPoints <= player.EarnedPoints).OrderBy(c => c.EarnedPoints).LastOrDefault();
+            var newMilestone = _questConfiguration.Milestones.Where(c => c.EarnedPoints <= totalEarnedPoints).OrderBy(c => c.EarnedPoints).LastOrDefault();
            
             if (newMilestone == null)
-            {
-                // Player not pass the first milestone.
-                return progressResult;
-            }
-              
+                throw new Exception("Milestone not found.");
+
             // Check the number of milestone that player achieved.
             var newMilestoneIndex = Array.FindIndex(_questConfiguration.Milestones, c => c.EarnedPoints == newMilestone.EarnedPoints);
 
@@ -54,8 +51,7 @@ namespace quest_api.Services
             {
                 // Sum all the chips from milestones that player archived.
                 var chipsAwarded = 0;
-                var fromIndex = player.LastMilestoneIndexCompleted == null ? 0 : player.LastMilestoneIndexCompleted + 1 ;
-                for (int i = (int)fromIndex; i <= newMilestoneIndex; i++)
+                 for (int i = player.LastMilestoneIndexCompleted + 1; i <= newMilestoneIndex; i++)
                     chipsAwarded = chipsAwarded + _questConfiguration.Milestones[i].ChipsAwarded;
                 progressResult.MilestonesCompleted = new MilestoneCompletion(newMilestoneIndex, chipsAwarded);
             }

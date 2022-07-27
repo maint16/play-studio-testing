@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using quest_entity;
 
@@ -11,9 +12,10 @@ using quest_entity;
 namespace quest_entity.Migrations
 {
     [DbContext(typeof(QuestContext))]
-    partial class QuestContextModelSnapshot : ModelSnapshot
+    [Migration("20220727041422_Change_data_type")]
+    partial class Change_data_type
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

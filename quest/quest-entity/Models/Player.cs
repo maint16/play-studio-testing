@@ -10,6 +10,6 @@ namespace quest_entity.Models
     {
          public Guid Id { get; set; }
         public int EarnedPoints { get; set; }
-        public int? LastMilestoneIndexCompleted { get; set; }
+        public int LastMilestoneIndexCompleted { get; set; }
     }
 }
