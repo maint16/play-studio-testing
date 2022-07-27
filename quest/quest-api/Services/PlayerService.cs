@@ -59,7 +59,7 @@ namespace quest_api.Services
             // Update earned points, new milestone index to db.
             player.EarnedPoints = totalEarnedPoints;
             player.LastMilestoneIndexCompleted = newMilestoneIndex;
-            await _questContext.SaveChangesAsync(cancellation);
+            await _questContext.SaveChangesAsync();
 
             return progressResult;
         }

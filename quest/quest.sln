@@ -5,7 +5,11 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "quest-api", "quest-api\quest-api.csproj", "{2ACCDD94-75D0-4157-B430-8857AE1F91EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quest-entity", "quest-entity\quest-entity.csproj", "{AAC6C2AB-3B98-4FEF-9CDE-98C1D2779973}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "quest-entity", "quest-entity\quest-entity.csproj", "{AAC6C2AB-3B98-4FEF-9CDE-98C1D2779973}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{74EDE90C-6D38-4548-A762-BFA369D310CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quest-api-tests", "quest-api-tests\quest-api-tests.csproj", "{9EE2ABAF-79A1-4FE8-809F-9082FF83CDFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{AAC6C2AB-3B98-4FEF-9CDE-98C1D2779973}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAC6C2AB-3B98-4FEF-9CDE-98C1D2779973}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAC6C2AB-3B98-4FEF-9CDE-98C1D2779973}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE2ABAF-79A1-4FE8-809F-9082FF83CDFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE2ABAF-79A1-4FE8-809F-9082FF83CDFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE2ABAF-79A1-4FE8-809F-9082FF83CDFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE2ABAF-79A1-4FE8-809F-9082FF83CDFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9EE2ABAF-79A1-4FE8-809F-9082FF83CDFD} = {74EDE90C-6D38-4548-A762-BFA369D310CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {667D2F66-B029-4361-B592-829E0AE5503D}
