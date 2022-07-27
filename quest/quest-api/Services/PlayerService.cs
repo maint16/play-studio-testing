@@ -30,17 +30,14 @@ namespace quest_api.Services
             var totalEarnedPoints = player.EarnedPoints + progressResult.QuestPointsEarned;
             if (totalEarnedPoints > _questConfiguration.TotalPoint)
                 throw new Exception("The earned points exceeded the total points.");
-
-            // Update and save earned points to db.
-            player.EarnedPoints = totalEarnedPoints;
-            await _questContext.SaveChangesAsync(cancellation);
+                        
             progressResult.TotalQuestPercentCompleted = (int)Math.Round((decimal)(totalEarnedPoints * 100 / _questConfiguration.TotalPoint), MidpointRounding.AwayFromZero);
             var newMilestone = _questConfiguration.Milestones.Where(c => c.EarnedPoints <= player.EarnedPoints).OrderBy(c => c.EarnedPoints).LastOrDefault();
            
             if (newMilestone == null)
             {
                 // Player not pass the first milestone.
-                return progressResult
+                return progressResult;
             }
               
             // Check the number of milestone that player achieved.
@@ -63,6 +60,11 @@ namespace quest_api.Services
                 progressResult.MilestonesCompleted = new MilestoneCompletion(newMilestoneIndex, chipsAwarded);
             }
 
+            // Update earned points, new milestone index to db.
+            player.EarnedPoints = totalEarnedPoints;
+            player.LastMilestoneIndexCompleted = newMilestoneIndex;
+            await _questContext.SaveChangesAsync(cancellation);
+
             return progressResult;
         }
 
@@ -75,8 +77,8 @@ namespace quest_api.Services
             if (player == null)
                 throw new NullReferenceException("Player not found.");
 
-            getStateResult.TotalQuestPercentCompleted = (int)Math.Round((decimal)(player.EarnedPoints / _questConfiguration.TotalPoint * 100));
-            getStateResult.LastMilestoneIndexCompleted = player.LastMilestoneIndexCompleted.Value;
+            getStateResult.TotalQuestPercentCompleted = (int)Math.Round((decimal)(player.EarnedPoints * 100 / _questConfiguration.TotalPoint), MidpointRounding.AwayFromZero);
+            getStateResult.LastMilestoneIndexCompleted = player.LastMilestoneIndexCompleted;
 
             return getStateResult;
         }
