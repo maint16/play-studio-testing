@@ -5,7 +5,10 @@ namespace quest_entity
 {
     public class QuestContext : DbContext
     {
-      
+        public QuestContext(DbContextOptions<QuestContext> options) : base(options)
+        {
+        }
+
         public DbSet<Player> Players { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
