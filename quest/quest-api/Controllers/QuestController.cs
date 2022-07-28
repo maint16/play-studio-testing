@@ -14,7 +14,11 @@ namespace quest_api.Controllers
         {
             _playerService = playerService;
         }
-
+        /// <summary>
+        /// Get progress base on condition.
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
         [HttpPost("progress")]
         public async Task<IActionResult> Progress([FromBody] ProgressSubmit command)
         {
@@ -22,6 +26,11 @@ namespace quest_api.Controllers
             return Ok(result);
         }
 
+        /// <summary>
+        /// Get the current state of player.
+        /// </summary>
+        /// <param name="playerId"></param>
+        /// <returns></returns>
         [HttpPost("state/{playerId}")]
         public async Task<IActionResult> State([FromRoute] Guid playerId)
         {
