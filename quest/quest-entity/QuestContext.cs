@@ -5,6 +5,10 @@ namespace quest_entity
 {
     public class QuestContext : DbContext
     {
+        public QuestContext()
+        {
+            
+        }
         public QuestContext(DbContextOptions<QuestContext> options) : base(options)
         {
         }
